@@ -1,53 +1,56 @@
-import { useState, useEffect } from 'react';
-import './App.css';
+import { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-import { fetchPersonagem } from '../wrapper.js';
+import Personagens from "./components/personagens";
+import Filmes from "./components/Filmes";
+
 
 function App() {
-  //     #variavel    #funcão          #estado inicial
-  const [personagens, setPersonagem] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [paginaAtual, setPaginaAtual] = useState("inicio");
 
-  
-  const loadPersonagens = async () => {
-    setLoading(true);
-    try {
-      const data = await fetchPersonagem();
-      setPersonagem(data); 
-    } catch (error) {
-      alert('Erro ao carregar os personagens.');
-    } finally {
-      setLoading(false);
+  const renderPagina = () => {
+    switch (paginaAtual) {
+      case "inicio":
+        return <h1>Bem-vindo à aplicação!</h1>;
+      case "personagens":
+        return <Personagens />;
+      case "filmes":
+        return <Filmes />;
+      default:
+        return <h1>Página não encontrada</h1>;
     }
   };
 
-  // Chama loadPersonagens quando o componente for montado
-  useEffect(() => {
-    loadPersonagens();
-  }, []);
-
   return (
-    <>
-      <div>
-        {loading ? (
-          <div>Carregando...</div>
-        ) : (
-          Array.isArray(personagens) && personagens.length > 0 ? (
-            <ul>
-              {personagens.map((personagem, index) => (
-                <li key={index}>
-                  <p><strong>Nome:</strong> {personagem.nome}</p>
-                  <p><strong>Descrição:</strong> {personagem.descricao}</p>
-                  <p><strong>Foto:</strong> <img src={personagem.foto} alt={personagem.nome} style={{width: '150px', height: '150px'}} /></p>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <div>Sem personagens disponíveis.</div>
-          )
-        )}
-      </div>
-    </>
+    <div>
+      <ul className="nav nav-tabs">
+        <li className="nav-item">
+          <button
+            className={`nav-link ${paginaAtual === "inicio" ? "active" : ""}`}
+            onClick={() => setPaginaAtual("inicio")}
+          >
+            Início
+          </button>
+        </li>
+        <li className="nav-item">
+          <button
+            className={`nav-link ${paginaAtual === "personagens" ? "active" : ""}`}
+            onClick={() => setPaginaAtual("personagens")}
+          >
+            Personagens
+          </button>
+        </li>
+        <li className="nav-item">
+          <button
+            className={`nav-link ${paginaAtual === "filmes" ? "active" : ""}`}
+            onClick={() => setPaginaAtual("filmes")}
+          >
+            Filmes
+          </button>
+        </li>
+      </ul>
+      <div className="container mt-4">{renderPagina()}</div>
+    </div>
   );
 }
 
