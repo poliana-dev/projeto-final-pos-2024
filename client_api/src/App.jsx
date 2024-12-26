@@ -3,6 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import Personagens from "./components/personagens";
 import Filmes from "./components/Filmes";
+import Cenarios from "./components/Cenarios"
+import Musicas from "./components/Musicas"
 
 
 function App() {
@@ -16,6 +18,10 @@ function App() {
         return <Personagens />;
       case "filmes":
         return <Filmes />;
+      case "cenarios":
+        return <Cenarios />;
+      case "musicas":
+        return <Musicas />;
       default:
         return <h1>Página não encontrada</h1>;
     }
@@ -46,6 +52,22 @@ function App() {
             onClick={() => setPaginaAtual("filmes")}
           >
             Filmes
+          </button>
+        </li>
+        <li className="nav-item">
+          <button
+            className={`nav-link ${paginaAtual === "cenarios" ? "active" : ""}`}
+            onClick={() => setPaginaAtual("cenarios")}
+          >
+            Cenários
+          </button>
+        </li>
+        <li className="nav-item">
+          <button
+            className={`nav-link ${paginaAtual === "musicas" ? "active" : ""}`}
+            onClick={() => setPaginaAtual("musicas")}
+          >
+            Músicas
           </button>
         </li>
       </ul>
