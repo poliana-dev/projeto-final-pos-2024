@@ -41,7 +41,7 @@ class Filme(models.Model):
 class Musica(models.Model):
     nome = models.CharField(max_length=100, verbose_name="Nome da música")
     duracao = models.CharField(max_length=45, verbose_name="Duração da música", help_text="Nesse formato: 3m30")
-    filme = models.ForeignKey(Filme, on_delete=models.CASCADE, verbose_name="Filme")
+    filme = models.ForeignKey(Filme, on_delete=models.CASCADE, verbose_name="Filme", related_name='musicas')
 
     def __str__(self):
         return f"{self.nome} ({self.duracao})"
