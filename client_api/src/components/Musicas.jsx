@@ -56,6 +56,7 @@ function Musicas() {
                   <div className="card-body">
                     <h5 className="card-title">{musica.nome}</h5>
                     <h6 className="card-subtitle mb-2 text-muted">{musica.duracao} segundos</h6>
+                    <a href={musica.url} target="_blank">Ouça a música</a>
 
                     {musica.filme && filmes[musica.filme] ? (
                       <p className="card-text"> <strong>Filme: </strong>

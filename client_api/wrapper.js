@@ -55,5 +55,17 @@ export async function fetchFilmesMusica(id) {
   return data;
 }
 
+export async function fetchRoupa() {
+  const url = `${api_url}roupas`; 
+  const response = await fetch(url);  
+  const data = await response.json();
+  return data;
+};
 
+export async function fetchAcessorio() {
+  const url = `${api_url}acessorios`; 
+  const response = await fetch(url);  
+  const data = await response.json();
+  return data;
+};
 
