@@ -1,1 +1,134 @@
-/*  aqui é do index.html */
+/* Estilo global */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9e7f7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #d632a9;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #fff;
+  }
+  
+  p {
+    color: #555;
+  }
+  
+  a {
+    color: #d632a9;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Container */
+  .container-fluid {
+    padding: 20px;
+    background-color: #fce1f4; /* Cor suave para o fundo */
+    min-height: 100vh;
+  }
+  
+  /* Root */
+  #root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  /* Ajustes no Bootstrap */
+  .row {
+    margin-bottom: 20px;
+  }
+  
+  .card {
+    background-color: #fff;
+    border: 1px solid #f5d0f0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body {
+    padding: 15px;
+  }
+  
+  .card-title {
+    color: #d632a9;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    color: #555;
+  }
+  
+  /* Imagens */
+  .card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    object-fit: cover;
+    height: 200px; /* Ajuste de altura para imagens */
+  }
+  
+  .img-fluid {
+    border-radius: 10px;
+  }
+  
+  /* Accordion */
+  .accordion-button {
+    background-color: #ffe1f4;
+    color: #d632a9;
+    font-weight: bold;
+  }
+  
+  .accordion-button:not(.collapsed) {
+    background-color: #ffd6ef;
+    color: #d632a9;
+  }
+  
+  .accordion-body {
+    background-color: #fffafc;
+  }
+  
+  /* Botões */
+  button {
+    background-color: #d632a9;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background-color: #ff77b5;
+    cursor: pointer;
+  }
+  
+  /* Tamanho de fonte */
+  body, p, a {
+    font-size: 1rem;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  /* Layout responsivo */
+  @media (max-width: 768px) {
+    .col-md-4,
+    .col-md-6 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+  
