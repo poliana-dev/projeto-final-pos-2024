@@ -15,7 +15,7 @@ function App() {
   const renderPagina = () => {
     switch (paginaAtual) {
       case "inicio":
-        return <h1>Bem-vindo à aplicação!</h1>;
+        return <h1 class="text-center">Bem-vindo à aplicação!</h1>;
       case "personagens":
         return <Personagens />;
       case "filmes":
