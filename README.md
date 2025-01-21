@@ -1,4 +1,3 @@
-# projeto-final-pos-2024
-Projeto Final da disciplina de POS
+# projeto-final-pos-2024 - API BARBIE
 
-Dupla: Maria Poliana P. de Paiva & Helloar Gabrielly de Souza 🥰👻
+Dupla: Maria Poliana P. de Paiva & Helloar Gabrielly de Souza
