@@ -1,6 +1,6 @@
 # projeto-final-pos-2024
 
-É uma api que reúne filmes, acessorios, músicas etc da Barbie.  
+É uma api que reúne filmes, acessorios, músicas etc.  
 
 ## Instalação do Serviço 🛠️
 Segue o passo a passo:
